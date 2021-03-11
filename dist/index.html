@@ -11,6 +11,7 @@
 </head>
 <body>
     <div id="box">a</div>
+    <div id="box1">a</div>
     <script type="text/javascript">
     let md = window.markdownit();
     console.log(md)
@@ -28,6 +29,14 @@
             res = md.render(data)
             // 将解析后的md渲染到页面
             $('#box').append(res)
+        })
+
+        $.get('./md/two.md',data=>{
+            console.log(data)
+            // 解析引入的md
+            res = md.render(data)
+            // 将解析后的md渲染到页面
+            $('#box1').append(res)
         })
 
     })
